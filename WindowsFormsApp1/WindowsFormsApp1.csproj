@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C94B24DC-5113-49ED-8DE7-494083266149}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLoader, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.2.3, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.3\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.Desktop.UI, Version=2.0.9.0, Culture=neutral, PublicKeyToken=422d444a8a9fa6db, processorArchitecture=MSIL">
+      <HintPath>..\packages\Siticone.Desktop.UI.2.0.9\lib\net40\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addmin_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addmin_form.Designer.cs">
+      <DependentUpon>Addmin_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_food.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="add_food.Designer.cs">
+      <DependentUpon>add_food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add_staff.Designer.cs">
+      <DependentUpon>Add_staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_account.Designer.cs">
+      <DependentUpon>Admin_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_bill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_bill.Designer.cs">
+      <DependentUpon>Admin_bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_food.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_food.Designer.cs">
+      <DependentUpon>Admin_food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Revenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Revenue.Designer.cs">
+      <DependentUpon>Admin_Revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_staff.Designer.cs">
+      <DependentUpon>Admin_staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_table.Designer.cs">
+      <DependentUpon>Admin_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="choose_UserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choose_UserAdmin.Designer.cs">
+      <DependentUpon>choose_UserAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_mana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_mana.Designer.cs">
+      <DependentUpon>Main_mana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_user.Designer.cs">
+      <DependentUpon>Main_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="My_Bill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My_Bill.Designer.cs">
+      <DependentUpon>My_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setting.Designer.cs">
+      <DependentUpon>setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs" />
+    <Compile Include="TableInstance.cs" />
+    <Compile Include="table_user.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table_user.Designer.cs">
+      <DependentUpon>table_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_1.Designer.cs">
+      <DependentUpon>user_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_food.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_food.Designer.cs">
+      <DependentUpon>user_food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view.Designer.cs">
+      <DependentUpon>view.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Addmin_form.resx">
+      <DependentUpon>Addmin_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_food.resx">
+      <DependentUpon>add_food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_staff.resx">
+      <DependentUpon>Add_staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_account.resx">
+      <DependentUpon>Admin_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_bill.resx">
+      <DependentUpon>Admin_bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_food.resx">
+      <DependentUpon>Admin_food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Revenue.resx">
+      <DependentUpon>Admin_Revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_staff.resx">
+      <DependentUpon>Admin_staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_table.resx">
+      <DependentUpon>Admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="choose_UserAdmin.resx">
+      <DependentUpon>choose_UserAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_mana.resx">
+      <DependentUpon>Main_mana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_user.resx">
+      <DependentUpon>Main_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_Bill.resx">
+      <DependentUpon>My_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="setting.resx">
+      <DependentUpon>setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="table_user.resx">
+      <DependentUpon>table_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_1.resx">
+      <DependentUpon>user_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_food.resx">
+      <DependentUpon>user_food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view.resx">
+      <DependentUpon>view.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3020959-poster-starbucks-1418200277160-crop-1418268852594.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iD_logo-cua-starbucks-co-mot-bi-mat-ma-ban-chua-bao-gio-nhan-thay_pic-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\234-2342897_starbucks-free-powerpoint-image-starbuck-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starbucks-sign.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starbucks-sign1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\604542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-coin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-food1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-coin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045425.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6045426.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoices.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoices1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-basket1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roast-chicken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3b428fed44a72f7fa3e0a221c5c2ed1a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smiling-chef-cartoon-character-holding-platter_266639-108.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3b428fed44a72f7fa3e0a221c5c2ed1a1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3b428fed44a72f7fa3e0a221c5c2ed1a2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chef-Cartoon-Logo-Template-600x310.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-487077896-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\464074.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WELCOME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FOOD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hamburger-cheeseburger-cartoon-character-on-transparent-background-PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hamburger-cheeseburger-cartoon-character-on-transparent-background-PNG %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-basket2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-basket3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-basket4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favpng_mcdonalds-french-fries-fast-food-fried-chicken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay-per-click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-coca-cola-cherry-fizzy-drinks-5cd59fa8e84eb9.3506535215575039129515.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restaurant_rue_Berckmansstraat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
